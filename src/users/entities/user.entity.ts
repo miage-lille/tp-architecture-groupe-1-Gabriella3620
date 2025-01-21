@@ -5,4 +5,8 @@ type UserProps = {
   email: string;
   password: string;
 };
-export class User extends Entity<UserProps> {}
+export class User extends Entity<UserProps> {
+  isSameUser(userId: string) {
+    return this.initialState.id === userId;
+  }
+}
