@@ -6,4 +6,10 @@ export class InMemoryWebinarRepository implements IWebinarRepository {
   async create(webinar: Webinar): Promise<void> {
     this.database.push(webinar);
   }
+
+  findById(id: string): Promise<Webinar | null> {
+    return Promise.resolve(
+      this.database.find((webinar) => webinar.isSameWebinar(id)) || null,
+    );
+  }
 }

@@ -26,4 +26,7 @@ export class Webinar extends Entity<WebinarProps> {
   isOrganizer(userId: string) {
     return this.props.organizerId === userId;
   }
+  isSameWebinar(webinarId: string) {
+    return this.props.id === webinarId;
+  }
 }
